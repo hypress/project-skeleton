@@ -159,7 +159,6 @@
     become_user: vagrant
     shell: |
       cd /host-machine
-      npm run preinstall
       npm install
 
   - name: Add startup script
