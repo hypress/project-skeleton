@@ -6,7 +6,8 @@
   "scripts": {
     "preinstall": "npm install -g node-sass",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --config .hypress/webpack.config.js  --watch --mode=development --info-verbosity verbose"
+    "dev": "webpack --config .hypress/webpack.config.js  --watch --mode=development --info-verbosity verbose",
+    "build": "webpack --config .hypress/webpack.config.js  --info-verbosity verbose"
   },
   "author": "",
   "license": "ISC",
