@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.11"
   config.vm.hostname = 'hypress.local'
 
   config.hostmanager.enabled = true
@@ -67,6 +67,11 @@ Vagrant.configure("2") do |config|
   #
   # View the documentation for the provider you are using for more
   # information on available options.
+
+  # From: https://betacloud.io/get-rid-of-ubuntu-xenial-16-04-cloudimg-console-log/
+  #config.vm.provider "virtualbox" do |vb|
+  #  vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+  #end
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the

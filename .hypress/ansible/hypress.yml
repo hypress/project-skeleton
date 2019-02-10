@@ -155,24 +155,11 @@
       ln -s ../../../../../src ./.hypress/htdocs/wp/wp-content/themes/hypress
     when: result.stat.exists == false
 
-  - name: Install WordPress instance
-    become_user: vagrant
-    shell: |
-            cd /host-machine/.hypress/htdocs/wp
-            if ! $(wp core is-installed); then
-              wp core install --admin_user=hypress --admin_password=hypress --url=192.168.33.10 --title=hypress --admin_email=root@example.com
-              wp plugin uninstall hello
-              wp plugin uninstall akismet
-              wp post delete 1 2 --force
-              wp theme activate hypress
-            fi
-
   - name: Run npm install
     become_user: vagrant
     shell: |
-            cd /host-machine
-            npm run preinstall
-            npm install
+      cd /host-machine
+      npm install
 
   - name: Add startup script
     cron:
@@ -187,7 +174,19 @@
 
   - name: Run startup script
     shell: |
-            /host-machine/.hypress/scripts/startup.sh
+      /host-machine/.hypress/scripts/startup.sh
+
+  - name: Install WordPress instance
+    become_user: vagrant
+    shell: |
+            cd /host-machine/.hypress/htdocs/wp
+            if ! $(wp core is-installed); then
+              wp core install --admin_user=hypress --admin_password=hypress --url=192.168.33.10 --title=hypress --admin_email=root@example.com
+              wp plugin uninstall hello
+              wp plugin uninstall akismet
+              wp post delete 1 2 --force
+              wp theme activate hypress
+            fi
 
   handlers:
   - name: restart apache2

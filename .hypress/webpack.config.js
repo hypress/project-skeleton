@@ -48,7 +48,6 @@ module.exports = {
 		]
 	},
 	performance: { hints: false },
-	watch: true,
 	watchOptions: {
 		poll: 1000
 	}
