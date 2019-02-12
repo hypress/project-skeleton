@@ -181,7 +181,7 @@
     shell: |
             cd /host-machine/.hypress/htdocs/wp
             if ! $(wp core is-installed); then
-              wp core install --admin_user=hypress --admin_password=hypress --url=192.168.33.10 --title=hypress --admin_email=root@example.com
+              wp core install --admin_user=hypress --admin_password=hypress --url=hypress.local --title=hypress --admin_email=root@example.com
               wp plugin uninstall hello
               wp plugin uninstall akismet
               wp post delete 1 2 --force
