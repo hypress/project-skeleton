@@ -184,6 +184,15 @@
               wp core install --admin_user=hypress --admin_password=hypress --url=hypress.local --title=hypress --admin_email=root@example.com
               wp theme activate hypress
             fi
+            if (wp theme is-installed twentynineteen); then
+              wp theme uninstall twentynineteen
+            fi
+            if (wp theme is-installed twentyseventeen); then
+              wp theme uninstall twentyseventeen
+            fi
+            if (wp theme is-installed twentysixteen); then
+              wp theme uninstall twentysixteen
+            fi
             if (wp plugin is-installed hello); then
               wp plugin uninstall hello
             fi
