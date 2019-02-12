@@ -32,13 +32,18 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.11"
+  config.vm.network "private_network", type: "dhcp"
   config.vm.hostname = 'hypress.local'
 
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
+
+  # From: https://github.com/devopsgroup-io/vagrant-hostmanager/issues/86#issuecomment-107052823
+  config.hostmanager.ip_resolver = proc do |vm, resolving_vm|
+    `vagrant ssh -c "hostname -I"`.split()[1]
+  end
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
