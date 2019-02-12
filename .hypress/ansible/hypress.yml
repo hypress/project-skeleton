@@ -182,10 +182,19 @@
             cd /host-machine/.hypress/htdocs/wp
             if ! $(wp core is-installed); then
               wp core install --admin_user=hypress --admin_password=hypress --url=hypress.local --title=hypress --admin_email=root@example.com
-              wp plugin uninstall hello
-              wp plugin uninstall akismet
-              wp post delete 1 2 --force
               wp theme activate hypress
+            fi
+            if (wp plugin is-installed hello); then
+              wp plugin uninstall hello
+            fi
+            if (wp plugin is-installed akismet); then
+              wp plugin uninstall akismet
+            fi
+            if (wp post exists 1); then
+              wp post delete 1 --force
+            fi
+            if (wp post exists 2); then
+              wp post delete 2 --force
             fi
 
   handlers:
