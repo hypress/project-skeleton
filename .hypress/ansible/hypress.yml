@@ -92,18 +92,62 @@
             </Directory>
         </VirtualHost>
 
+  - stat:
+      path: /host-machine/hypress.local.pem
+    register: result
+
+  - name: Add hypress virtual host for ssl
+    copy:
+      dest: "/etc/apache2/sites-available/hypress-ssl.conf"
+      content: |
+                <VirtualHost *:443>
+                    SSLEngine on
+                    SSLCertificateFile /host-machine/hypress.local.pem
+                    SSLCertificateKeyFile /host-machine/hypress.local-key.pem
+
+                    ServerAdmin webmaster@localhost
+                    ServerName localhost
+                    DocumentRoot /host-machine/.hypress/htdocs/wp
+                    ErrorLog ${APACHE_LOG_DIR}/error.log
+                    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+                    Alias /phpmyadmin "/usr/share/phpmyadmin"
+                    <Directory /usr/share/phpmyadmin>
+                      Options Indexes FollowSymLinks
+                      AllowOverride None
+                      Require all granted
+                    </Directory>
+
+                    <Directory /host-machine/.hypress/htdocs>
+                      Options Indexes FollowSymLinks
+                      AllowOverride None
+                      Require all granted
+                    </Directory>
+                </VirtualHost>
+    when: result.stat.exists == true
+
+  - name: a2enmod rewrite
+    command: a2enmod rewrite
+    notify:
+      - restart apache2
+
+  - name: a2enmod ssl
+    command: a2enmod ssl
+    notify:
+      - restart apache2
+
   - name: a2ensite hypress
     command: a2ensite hypress
     notify:
       - restart apache2
 
-  - name: a2dissite 000-default
-    command: a2dissite 000-default
+  - name: a2ensite hypress-ssl
+    command: a2ensite hypress-ssl
     notify:
       - restart apache2
 
-  - name: a2enmod rewrite
-    command: a2enmod rewrite
+  - name: a2dissite 000-default
+    command: a2dissite 000-default
     notify:
       - restart apache2
 
