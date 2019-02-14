@@ -93,7 +93,7 @@
         </VirtualHost>
 
   - stat:
-      path: /host-machine/hypress.local.pem
+      path: /host-machine/.hypress/hypress.local.pem
     register: result
 
   - name: Add hypress virtual host for ssl
@@ -102,8 +102,8 @@
       content: |
                 <VirtualHost *:443>
                     SSLEngine on
-                    SSLCertificateFile /host-machine/hypress.local.pem
-                    SSLCertificateKeyFile /host-machine/hypress.local-key.pem
+                    SSLCertificateFile /host-machine/.hypress/hypress.local.pem
+                    SSLCertificateKeyFile /host-machine/.hypress/hypress.local-key.pem
 
                     ServerAdmin webmaster@localhost
                     ServerName localhost
