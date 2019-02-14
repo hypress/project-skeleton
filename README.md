@@ -1,5 +1,6 @@
 # hypress-project-skeleton
 ![WordPress v5.0.3](https://img.shields.io/badge/wordpress-v5.0.3-blue.svg)
+![Last commit](https://img.shields.io/github/last-commit/hypress/project-skeleton.svg?style=flat)
 
 A very basic project skeleton for hypress projects. The main goal is to keep as much as 
 dependencies away from the host machine.
@@ -57,6 +58,11 @@ If you ran `vagrant up` already, you need to provision the box again.
 ```bash
 vagrant provision
 ```
+
+## Plugin development
+If you want to use this setup for WordPress plugin development, change the 
+`hypress_type` variable in `./.hypress/ansible/settings.yml` from `theme`
+to `plugin`. 
 
 ## Contributing
 This projects is open for contributions. 
