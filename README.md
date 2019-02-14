@@ -42,11 +42,28 @@ MySQL database: `hypress`
 WordPress user: `hypress`  
 WordPress password: `hypress` 
 
+## Enable local https
+To get local https, you can utilize [mkcert]. Follow the link for installation instructions.
+
+After installing mkcert and creating a local CA create a certificate for hypress.
+
+```bash
+cd .hypress/
+mkcert hypress.local
+```
+
+If you ran `vagrant up` already, you need to provision the box again.
+
+```bash
+vagrant provision
+```
+
 ## Contributing
 This projects is open for contributions. 
 
 [hypress]: https://github.com/hypress
 [generator-hypress]: https://github.com/hypress/generator-hypress
+[mkcert]: https://github.com/FiloSottile/mkcert
 
 
 
