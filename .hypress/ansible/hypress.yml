@@ -4,6 +4,10 @@
   become: true
 
   tasks:
+  - name: Load variables
+    include_vars:
+      file: settings.yml
+
   - name: Install nodejs
     package:
       name: nodejs
@@ -93,7 +97,7 @@
         </VirtualHost>
 
   - stat:
-      path: /host-machine/.hypress/hypress.local.pem
+      path: /host-machine/.hypress/{{ hypress_slug }}.local.pem
     register: result
 
   - name: Add hypress virtual host for ssl
@@ -102,8 +106,8 @@
       content: |
                 <VirtualHost *:443>
                     SSLEngine on
-                    SSLCertificateFile /host-machine/.hypress/hypress.local.pem
-                    SSLCertificateKeyFile /host-machine/.hypress/hypress.local-key.pem
+                    SSLCertificateFile /host-machine/.hypress/{{ hypress_slug }}.local.pem
+                    SSLCertificateKeyFile /host-machine/.hypress/{{ hypress_slug }}.local-key.pem
 
                     ServerAdmin webmaster@localhost
                     ServerName localhost
@@ -190,14 +194,27 @@
     when: result.stat.exists == false
 
   - stat:
-      path: /host-machine/.hypress/htdocs/wp/wp-content/themes/hypress
+      path: /host-machine/.hypress/htdocs/wp/wp-content/themes/{{ hypress_slug }}
     register: result
 
   - name: Setup symlink to source
     shell: |
       cd /host-machine
-      ln -s ../../../../../src ./.hypress/htdocs/wp/wp-content/themes/hypress
-    when: result.stat.exists == false
+      ln -s ../../../../../src ./.hypress/htdocs/wp/wp-content/themes/{{ hypress_slug }}
+    when: result.stat.exists == false and
+          hypress_type == 'theme'
+
+  - stat:
+      path: /host-machine/.hypress/htdocs/wp/wp-content/plugins/{{ hypress_slug }}
+    register: result
+
+  - name: Setup symlink to source
+    shell: |
+        cd /host-machine
+        ln -s ../../../../../src ./.hypress/htdocs/wp/wp-content/plugins/{{ hypress_slug }}
+    when: result.stat.exists == false and
+          hypress_type == 'plugin'
+
 
   - name: Run npm install
     become_user: vagrant
@@ -225,8 +242,8 @@
     shell: |
             cd /host-machine/.hypress/htdocs/wp
             if ! $(wp core is-installed); then
-              wp core install --admin_user=hypress --admin_password=hypress --url=hypress.local --title=hypress --admin_email=root@example.com
-              wp theme activate hypress
+              wp core install --admin_user=hypress --admin_password=hypress --url={{ hypress_slug }}.local --title=hypress --admin_email=root@example.com
+              wp theme activate {{ hypress_slug }}
             fi
             if (wp theme is-installed twentynineteen); then
               wp theme uninstall twentynineteen
@@ -249,6 +266,21 @@
             if (wp post exists 2); then
               wp post delete 2 --force
             fi
+
+  - name: Activate theme
+    become_user: vagrant
+    shell: |
+            cd /host-machine/.hypress/htdocs/wp
+            wp theme activate {{ hypress_slug }}
+    when: hypress_type == 'theme'
+
+  - name: Activate plugin
+    become_user: vagrant
+    shell: |
+        cd /host-machine/.hypress/htdocs/wp
+        wp plugin activate {{ hypress_slug }}
+    when: hypress_type == 'plugin'
+
 
   handlers:
   - name: restart apache2
