@@ -244,7 +244,6 @@
             cd /host-machine/.hypress/htdocs/wp
             if ! $(wp core is-installed); then
               wp core install --admin_user=hypress --admin_password=hypress --url={{ hypress_slug }}.local --title=hypress --admin_email=root@example.com
-              wp theme activate {{ hypress_slug }}
             fi
             if (wp theme is-installed twentynineteen); then
               wp theme uninstall twentynineteen
