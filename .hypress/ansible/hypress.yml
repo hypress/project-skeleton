@@ -85,13 +85,13 @@
             Alias /phpmyadmin "/usr/share/phpmyadmin"
             <Directory /usr/share/phpmyadmin>
               Options Indexes FollowSymLinks
-              AllowOverride None
+              AllowOverride All
               Require all granted
             </Directory>
 
             <Directory /host-machine/.hypress/htdocs>
               Options Indexes FollowSymLinks
-              AllowOverride None
+              AllowOverride All
               Require all granted
             </Directory>
         </VirtualHost>
@@ -118,13 +118,13 @@
                     Alias /phpmyadmin "/usr/share/phpmyadmin"
                     <Directory /usr/share/phpmyadmin>
                       Options Indexes FollowSymLinks
-                      AllowOverride None
+                      AllowOverride All
                       Require all granted
                     </Directory>
 
                     <Directory /host-machine/.hypress/htdocs>
                       Options Indexes FollowSymLinks
-                      AllowOverride None
+                      AllowOverride All
                       Require all granted
                     </Directory>
                 </VirtualHost>
@@ -149,6 +149,7 @@
     command: a2ensite hypress-ssl
     notify:
       - restart apache2
+    when: result.stat.exists == true
 
   - name: a2dissite 000-default
     command: a2dissite 000-default
@@ -243,7 +244,6 @@
             cd /host-machine/.hypress/htdocs/wp
             if ! $(wp core is-installed); then
               wp core install --admin_user=hypress --admin_password=hypress --url={{ hypress_slug }}.local --title=hypress --admin_email=root@example.com
-              wp theme activate {{ hypress_slug }}
             fi
             if (wp theme is-installed twentynineteen); then
               wp theme uninstall twentynineteen
