@@ -10,10 +10,10 @@ fi
 
 if (command -v ansible-playbook)
   then
-    if !(ansible-playbook ./.hypress/ansible/hypress.yml --check)
+    if !(ansible-playbook ./.hypress/ansible/hypress.yml --syntax-check)
       then
         echo "Ansible playbook validation failed"
-        exit;
+        exit 1;
     fi
 fi
 
