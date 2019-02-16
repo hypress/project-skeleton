@@ -1,4 +1,5 @@
 # hypress-project-skeleton
+![Build status](https://api.travis-ci.org/hypress/project-skeleton.svg?branch=develop)
 ![WordPress v5.0.3](https://img.shields.io/badge/wordpress-v5.0.3-blue.svg)
 ![Last commit](https://img.shields.io/github/last-commit/hypress/project-skeleton.svg?style=flat)
 
