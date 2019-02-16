@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 if (command -v vagrant)
   then
-    if !(vagrant validate)
+    if !(vagrant validate -p)
       then
         echo "Vagrantfile validation failed"
         exit 1;
