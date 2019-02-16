@@ -1,6 +1,8 @@
 dist: xenial
 
 before_install:
-  - sudo apt-get install -y ansible vagrant
+  - sudo apt-get install -y ansible
+  - wget https://releases.hashicorp.com/vagrant/2.0.4/vagrant_2.0.4_x86_64.deb
+  - sudo dpkg -i vagrant_2.0.4_x86_64.deb
 
 script: ./.hypress/scripts/pre-commit.sh
