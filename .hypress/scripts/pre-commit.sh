@@ -4,6 +4,7 @@ if (command -v vagrant)
     if !(vagrant validate)
       then
         echo "Vagrantfile validation failed"
+        vagrant -v
         exit 1;
     fi
 fi
