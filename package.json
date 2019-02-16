@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "ls -lah"
+      "pre-commit": "./.hypress/scripts/pre-commit.sh"
     }
   }
 }
