@@ -7,5 +7,6 @@ before_install:
   # Use managed server plugin as provider to satisfy vagrant
   # From: https://github.com/hashicorp/vagrant/issues/10224#issuecomment-423803573
   - vagrant plugin install vagrant-managed-servers
+  - vagrant plugin install vagrant-hostmanager
 
 script: ./.hypress/scripts/pre-commit.sh

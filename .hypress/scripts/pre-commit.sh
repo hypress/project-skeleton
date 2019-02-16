@@ -4,7 +4,6 @@ if (command -v vagrant)
     if !(vagrant validate)
       then
         echo "Vagrantfile validation failed"
-        VBoxManage --version
         exit 1;
     fi
 fi
