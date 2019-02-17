@@ -66,6 +66,14 @@ If you want to use this setup for WordPress plugin development, change the
 `hypress_type` variable in `./.hypress/ansible/settings.yml` from `theme`
 to `plugin`.
 
+## Bundle your theme or Plugin
+To create a production ready release, just run
+
+```bash
+npm run bundle
+```
+You'll find a ready to use bundle in `./dist`.
+
 ## Contributing
 This projects is open for contributions.
 
