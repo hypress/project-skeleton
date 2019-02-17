@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --config .hypress/webpack.config.js  --watch --mode=development --info-verbosity verbose",
-    "build": "webpack --config .hypress/webpack.config.js  --info-verbosity verbose"
+    "build": "webpack --config .hypress/webpack.config.js  --mode=production --info-verbosity verbose",
+    "bundle": "sh ./.hypress/scripts/bundle.sh"
   },
   "author": "",
   "license": "ISC",
