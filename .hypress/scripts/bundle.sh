@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # From: https://stackoverflow.com/questions/5014632/how-can-i-parse-a-yaml-file-from-a-linux-shell-script/21189044#21189044
 function parse_yaml {
    local prefix=$2
