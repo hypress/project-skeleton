@@ -24,13 +24,13 @@
 	define('DB_NAME', 'hypress');
 	
 	/** MySQL database username */
-	define('DB_USER', 'hypress');
+	define('DB_USER', 'root');
 	
 	/** MySQL database password */
 	define('DB_PASSWORD', 'hypress');
 	
 	/** MySQL hostname */
-	define('DB_HOST', 'localhost');
+	define('DB_HOST', 'hypress_mysql');
 	
 	/** Database Charset to use in creating database tables. */
 	define('DB_CHARSET', 'utf8');

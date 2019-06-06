@@ -1,0 +1,34 @@
+[Fri May 10 14:36:31.132679 2019] [proxy:error] [pid 8:tid 140683683796736] [client 172.21.0.1:37644] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:06.810629 2019] [proxy:error] [pid 9:tid 140189132908288] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:07.673689 2019] [proxy:error] [pid 9:tid 140189124515584] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:07.844022 2019] [proxy:error] [pid 9:tid 140189116122880] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:07.979950 2019] [proxy:error] [pid 9:tid 140189107730176] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:08.116511 2019] [proxy:error] [pid 9:tid 140189099337472] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:08.472395 2019] [proxy:error] [pid 9:tid 140189090944768] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:08.809196 2019] [proxy:error] [pid 9:tid 140188999214848] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 14:40:08.935480 2019] [proxy:error] [pid 9:tid 140188982429440] [client 172.22.0.1:36730] AH00898: DNS lookup failure for: hypress_php returned by /index.php
+[Fri May 10 15:36:47.796814 2019] [proxy:error] [pid 8:tid 140416349153024] [client 172.23.0.1:49910] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:36:52.634119 2019] [proxy:error] [pid 10:tid 140347909183232] [client 172.23.0.1:49912] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:39:15.391346 2019] [proxy:error] [pid 10:tid 139672403572480] [client 172.23.0.1:36360] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:39:16.166185 2019] [proxy:error] [pid 10:tid 139672378394368] [client 172.23.0.1:36360] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:39:16.742233 2019] [proxy:error] [pid 10:tid 139672336430848] [client 172.23.0.1:36360] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:39:16.934513 2019] [proxy:error] [pid 10:tid 139672328038144] [client 172.23.0.1:36360] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:39:45.168079 2019] [proxy:error] [pid 10:tid 139672218932992] [client 172.23.0.1:36364] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:39:45.472800 2019] [proxy:error] [pid 10:tid 139672210540288] [client 172.23.0.1:36364] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:39:45.617566 2019] [proxy:error] [pid 10:tid 139672386787072] [client 172.23.0.1:36364] AH00898: DNS lookup failure for: ${wysiwyg_project_name}_php returned by /index.php
+[Fri May 10 15:40:14.154800 2019] [proxy_fcgi:error] [pid 9:tid 140003679856384] [client 172.23.0.1:36368] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:40:15.320991 2019] [proxy_fcgi:error] [pid 9:tid 140003671463680] [client 172.23.0.1:36368] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:40:15.768901 2019] [proxy_fcgi:error] [pid 9:tid 140003688249088] [client 172.23.0.1:36368] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:40:15.938642 2019] [proxy_fcgi:error] [pid 9:tid 140003696641792] [client 172.23.0.1:36368] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:13.751852 2019] [proxy_fcgi:error] [pid 9:tid 140006575912704] [client 172.23.0.1:36380] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:14.456067 2019] [proxy_fcgi:error] [pid 9:tid 140006559127296] [client 172.23.0.1:36380] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:14.753798 2019] [proxy_fcgi:error] [pid 9:tid 140006550734592] [client 172.23.0.1:36380] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:14.924782 2019] [proxy_fcgi:error] [pid 9:tid 140006471497472] [client 172.23.0.1:36380] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:16.797658 2019] [proxy_fcgi:error] [pid 9:tid 140006463104768] [client 172.23.0.1:36380] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:18.896811 2019] [proxy_fcgi:error] [pid 9:tid 140006454712064] [client 172.23.0.1:36380] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:40.929152 2019] [proxy_fcgi:error] [pid 9:tid 139941625939712] [client 172.23.0.1:36396] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:41:41.510268 2019] [proxy_fcgi:error] [pid 9:tid 139941617547008] [client 172.23.0.1:36396] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:42:14.019195 2019] [proxy_fcgi:error] [pid 7:tid 140046644528896] [client 172.23.0.1:36404] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:42:14.554671 2019] [proxy_fcgi:error] [pid 7:tid 140046636136192] [client 172.23.0.1:36404] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 15:42:14.697746 2019] [proxy_fcgi:error] [pid 7:tid 140046627743488] [client 172.23.0.1:36404] AH01071: Got error 'Primary script unknown\n'
+[Fri May 10 16:47:58.039101 2019] [proxy:error] [pid 8:tid 140232716183296] [client 172.25.0.1:49196] AH00898: DNS lookup failure for: hypress_php returned by /index.php
