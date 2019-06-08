@@ -7,6 +7,9 @@ services:
     build: ./.hypress/docker/build/apache
     working_dir: /
     env_file: .env
+    depends_on:
+      - php
+      - mysql
     volumes:
       - ./:/host-machine
     environment:
@@ -40,8 +43,11 @@ services:
   hypress:
     container_name: ${hypress_slug}_hypress
     build: ./.hypress/docker/build/hypress
-    env_file: .env
     working_dir: /host-machine
+    env_file: .env
+    depends_on:
+      - php
+      - mysql
     volumes:
       - ./:/host-machine
-    command: npm run dev
+    command: .hypress/scripts/startup-foreground.sh

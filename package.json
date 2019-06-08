@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm install && npm rebuild node-sass && webpack --config .hypress/webpack.config.js  --watch --mode=development --info-verbosity verbose",
+    "dev": "webpack --config .hypress/webpack.config.js  --watch --mode=development --info-verbosity verbose",
     "build": "webpack --config .hypress/webpack.config.js  --mode=production --info-verbosity verbose",
     "bundle": "sh ./.hypress/scripts/bundle.sh"
   },

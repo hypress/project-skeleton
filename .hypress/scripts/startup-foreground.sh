@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-cd /host-machine
-npm run dev
+.hypress/scripts/startup/install-dependencies.sh
+.hypress/scripts/startup/setup-wordpress.sh
+.hypress/scripts/startup/run-dev.sh;
