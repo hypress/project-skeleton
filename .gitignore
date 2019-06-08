@@ -9,5 +9,6 @@ src/public.js
 .hypress/hypress.local.pem
 .hypress/ansible/hypress.retry
 .hypress/*.pem
+.hypress/logs
 dist
 .idea

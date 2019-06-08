@@ -12,9 +12,15 @@ The base project skeleton for [hypress] driven WordPress projects.
 This skeleton can be generated with the [yeoman hypress generator][generator-hypress].
 
 ## Requirements
+
+### Vagrant
 1. [VirtualBox](https://www.virtualbox.org/)
 2. [Vagrant](https://www.vagrantup.com/)
 3. [vagrant-hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager)
+
+### Docker
+1. [Docker](https://docker.com)
+2. [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Install dependencies with homebrew (macOS)
 Run
@@ -39,14 +45,25 @@ Frontend: http://hypress.local
 Backend: http://hypress.local/wp-admin  
 phpMyAdmin: http://hypress.local/phpmyadmin
 
-MySQL user: `hypress`   
-MySQL password: `hypress`  
-MySQL database: `hypress`  
+| Endpoint              | URL                                   |
+|---------              | ---                                   |
+| Frontend              | http://hypress.local                  |
+| Backend               | http://hypress.local/wp-admin         |
+| phpMyAdmin            | http://hypress.local/phpmyadmin       |
+|                       |                                       |
+| **Docker** Frontend   | http://hypress.localhost              |
+| **Docker** Backend    | http://hypress.localhost/wp-admin     |
+| **Docker** phpMyAdmin | http://hypress.localhost/phpmyadmin   |
 
-WordPress user: `hypress`  
-WordPress password: `hypress`
+| Credential            | Value                                 |
+|-----------            | -----                                 |
+| MySQL user            | `hypress`                             |
+| MySQL password        | `hypress`                             |
+| MySQL database        | `hypress`                             |
+| WordPress user        | `hypress`                             |
+| WordPress password    | `hypress`                             |
 
-## Enable local https
+## Enable local https (Vagrant only)
 To get local https, you can utilize [mkcert]. Follow the link for installation instructions.
 
 After installing mkcert and creating a local CA create a certificate for hypress.
