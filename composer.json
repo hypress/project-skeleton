@@ -23,5 +23,9 @@
         "type:wordpress-theme"
       ]
     }
+  },
+  "config": {
+    "vendor-dir": "src/vendor"
   }
+
 }
