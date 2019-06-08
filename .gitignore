@@ -10,3 +10,4 @@ src/public.js
 .hypress/ansible/hypress.retry
 .hypress/*.pem
 dist
+.idea
