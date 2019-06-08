@@ -41,10 +41,6 @@ To bring your development stack up, just start the vagrant box.
 vagrant up
 ```
 
-Frontend: http://hypress.local  
-Backend: http://hypress.local/wp-admin  
-phpMyAdmin: http://hypress.local/phpmyadmin
-
 | Endpoint              | URL                                   |
 |---------              | ---                                   |
 | Frontend              | http://hypress.local                  |
