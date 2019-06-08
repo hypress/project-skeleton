@@ -45,8 +45,8 @@ Frontend: http://hypress.local
 Backend: http://hypress.local/wp-admin  
 phpMyAdmin: http://hypress.local/phpmyadmin
 
-| Property              | Value                                 |
-|---------              | -----                                 |
+| Endpoint              | URL                                   |
+|---------              | ---                                   |
 | Frontend              | http://hypress.local                  |
 | Backend               | http://hypress.local/wp-admin         |
 | phpMyAdmin            | http://hypress.local/phpmyadmin       |
@@ -54,7 +54,9 @@ phpMyAdmin: http://hypress.local/phpmyadmin
 | **Docker** Frontend   | http://hypress.localhost              |
 | **Docker** Backend    | http://hypress.localhost/wp-admin     |
 | **Docker** phpMyAdmin | http://hypress.localhost/phpmyadmin   |
-|                       |                                       |
+
+| Credential            | Value                                 |
+|-----------            | -----                                 |
 | MySQL user            | `hypress`                             |
 | MySQL password        | `hypress`                             |
 | MySQL database        | `hypress`                             |
