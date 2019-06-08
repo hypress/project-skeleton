@@ -41,5 +41,7 @@ services:
     container_name: ${hypress_slug}_hypress
     build: ./.hypress/docker/build/hypress
     env_file: .env
+    working_dir: /host-machine
     volumes:
       - ./:/host-machine
+    command: npm run dev
