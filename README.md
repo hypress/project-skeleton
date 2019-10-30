@@ -1,8 +1,8 @@
-# hypress-project-skeleton (v0.0.4)
-![Version](https://img.shields.io/badge/version-v0.0.4-violet.svg)
+# hypress-project-skeleton (v0.1.0)
+![Version](https://img.shields.io/badge/version-v0.1.0-violet.svg)
 ![Last commit](https://img.shields.io/github/last-commit/hypress/project-skeleton.svg?style=flat)
 ![Build status](https://api.travis-ci.org/hypress/project-skeleton.svg?branch=develop)
-![WordPress v5.0.3](https://img.shields.io/badge/wordpress-v5.x.x-blue.svg)
+![WordPress v5.2.4](https://img.shields.io/badge/wordpress-v5.2.4-blue.svg)
 
 A very basic project skeleton for hypress projects. The main goal is to keep as much as
 dependencies away from the host machine.
@@ -39,6 +39,12 @@ To bring your development stack up, just start the vagrant box.
 
 ```bash
 vagrant up
+```
+
+
+If you are using Docker, run
+```bash
+docker-compose up
 ```
 
 | Endpoint              | URL                                   |
