@@ -41,6 +41,7 @@ To bring your development stack up, just start the vagrant box.
 vagrant up
 ```
 
+
 If you are using Docker, run
 ```bash
 docker-compose up
