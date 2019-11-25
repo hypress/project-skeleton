@@ -1,5 +1,4 @@
 .vagrant
-vendor
 .hypress/htdocs/wp
 node_modules
 src/bundle.js
@@ -14,3 +13,4 @@ src/public.js
 .hypress/logs/apache
 dist
 .idea
+src/vendor
