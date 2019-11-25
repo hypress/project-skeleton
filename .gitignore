@@ -10,6 +10,7 @@ src/public.js
 .hypress/hypress.local.pem
 .hypress/ansible/hypress.retry
 .hypress/*.pem
-.hypress/logs
+!.hypress/logs/apache/.gitkeep
+.hypress/logs/apache
 dist
 .idea
