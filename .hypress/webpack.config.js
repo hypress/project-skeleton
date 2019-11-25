@@ -33,16 +33,15 @@ module.exports = {
 					{
 						loader: 'postcss-loader',
 						options: {
-							plugins: () => {}
+							ident: 'postcss',
+							plugins: [
+								require('autoprefixer')(),
+
+							]
 						}
 					},
 					{
-						loader: 'sass-loader',
-						options: {
-							"includePaths": [
-								require('path').resolve(__dirname, '../node_modules')
-							]
-						}
+						loader: 'sass-loader'
 					}
 				]
 			}
